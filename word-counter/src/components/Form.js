@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
-import TextField from "./TextField";
-import styles from "./Form.module.scss";
-import Stats from "./Stats";
+import React, { useState } from 'react'
+import TextField from './TextField'
+import styles from './Form.module.scss'
+import Stats from './Stats'
 
 const Form = () => {
-  const [text, setText] = useState("");
-  const [wordsNum, setWordsNum] = useState(0);
-  const characters = text.length;
-  const words = text.split(' ')
-  
-  // useEffect(() => {
-  //   if (text.length > 0) {
-  //     setWords(text.split(" "));
-  //     setWordsNum(words.length);
-  //     setWords((prevState) => prevState.filter((word) => word !== ""));
-  //     console.log(words);
-  //     console.log(wordsNum);
-  //   }
-  // }, [text]);
+  const [text, setText] = useState('')
+  const characters = text.length
+
+  const specialSymbols = ['',"!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[",']',"^","_","`","{","|","}","~"]
+
+  let words = text.split(' ')
+  words = words.filter(word => specialSymbols.indexOf(word) < 0);
+
+  const wordsNum = words.length
 
   return (
     <form
@@ -26,9 +21,9 @@ const Form = () => {
       onSubmit={(e) => e.preventDefault()}
     >
       <TextField setText={setText} text={text} />
-      <Stats characters={characters} words={words.length} setText={setText} />
+      <Stats characters={characters} wordsNum={wordsNum} setText={setText} />
     </form>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
