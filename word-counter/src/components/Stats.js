@@ -10,7 +10,9 @@ const Stats = ({ characters, words, setText }) => {
       </div>
       <div>
         <button>Select All</button>
-        <button>Reset</button>
+        <button onClick={() => {
+          setText('')
+          }}>Reset</button>
       </div>
     </div>
   );

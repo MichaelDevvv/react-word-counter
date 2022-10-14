@@ -1,8 +1,8 @@
 .wrapper {
-  width: auto;
+  width: 100%;
   border-top: 4px #646669 solid;
   padding: 16px 14px;
-  height: 30px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +20,7 @@
     padding: 10px 16px;
     border-radius: 6px;
     border: 2px solid #1e1a1a;
+    
   }
 
   button:nth-child(2) {

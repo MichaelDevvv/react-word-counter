@@ -5,19 +5,19 @@ import Stats from "./Stats";
 
 const Form = () => {
   const [text, setText] = useState("");
-  const [words, setWords] = useState([]);
   const [wordsNum, setWordsNum] = useState(0);
   const characters = text.length;
-
-  useEffect(() => {
-    if (text.length > 0) {
-      setWords(text.split(" "));
-      setWordsNum(words.length);
-      setWords((prevState) => prevState.filter((word) => word !== ""));
-      console.log(words);
-      console.log(wordsNum);
-    }
-  }, [text]);
+  const words = text.split(' ')
+  
+  // useEffect(() => {
+  //   if (text.length > 0) {
+  //     setWords(text.split(" "));
+  //     setWordsNum(words.length);
+  //     setWords((prevState) => prevState.filter((word) => word !== ""));
+  //     console.log(words);
+  //     console.log(wordsNum);
+  //   }
+  // }, [text]);
 
   return (
     <form
@@ -26,7 +26,7 @@ const Form = () => {
       onSubmit={(e) => e.preventDefault()}
     >
       <TextField setText={setText} text={text} />
-      <Stats characters={characters} words={wordsNum} setText={setText} />
+      <Stats characters={characters} words={words.length} setText={setText} />
     </form>
   );
 };
