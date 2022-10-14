@@ -22,6 +22,11 @@ body {
   animation: gradient 25s ease infinite;
 }
 
+h1 {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

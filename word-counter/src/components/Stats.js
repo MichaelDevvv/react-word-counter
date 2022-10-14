@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Stats.module.scss";
 
-const Stats = ({ characters, wordsNum, setText }) => {
+const Stats = ({ characters, wordsNum, text, setText }) => {
   return (
     <div className={styles.wrapper}>
       <div>
@@ -9,10 +9,8 @@ const Stats = ({ characters, wordsNum, setText }) => {
         <span className={styles.stat}>{characters} characters</span>
       </div>
       <div>
-        <button>Select All</button>
-        <button onClick={() => {
-          setText('')
-          }}>Reset</button>
+          <button onClick={() => navigator.clipboard.writeText(text)}>Copy</button>
+        <button onClick={() => setText('')}>Reset</button>
       </div>
     </div>
   );

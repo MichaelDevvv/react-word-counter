@@ -21,7 +21,7 @@ const Form = () => {
       onSubmit={(e) => e.preventDefault()}
     >
       <TextField setText={setText} text={text} />
-      <Stats characters={characters} wordsNum={wordsNum} setText={setText} />
+      <Stats characters={characters} wordsNum={wordsNum} setText={setText} text={text}/>
     </form>
   )
 }

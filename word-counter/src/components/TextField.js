@@ -5,8 +5,8 @@ const TextField = ({setText, text}) => {
   return (
     <textarea
       className={styles.textField} 
-      name="textarea" 
-      id="textarea" 
+      id="textField"
+      name="textField" 
       cols="30" 
       rows="10" 
       placeholder='Start typing, or paste your document here...'
