@@ -1,3 +1,3 @@
 # Live preview
 
-https://tenmichal.github.io/react-word-counter/
+https://michaeldevvv.github.io/react-word-counter/
